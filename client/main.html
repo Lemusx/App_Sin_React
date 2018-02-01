@@ -1,0 +1,30 @@
+<head>
+ <title>simple-todos</title>
+</head>
+ 
+<body>
+   {{> tasks}}
+</body>
+
+<template name="tasks">
+      <h1 style="text-align:center;">Agregar Todo</h1>
+          <form class="add-task">
+              <label>Nombre del Todo</label>
+              <input type="text" name="name" placeholder="Agregar Todo" />
+              <input type="submit" value="Submit" />
+              
+          </form>
+      <hr />
+      <h3>Todos</h3>
+
+      <u1>  
+        {{#each tasks}}
+          <li style="font-family:monospace;font-style: oblique;">
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+            <span class="text">{{name}}</span >
+            <button href="#" class="delete-task">X</button>
+          </li>
+        {{/each}}
+      </u1>
+</template>
+
